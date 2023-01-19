@@ -14,26 +14,37 @@ class FocusVC: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
-    //MARK: Variables
+    // MARK: Variables
     var timer = Timer()
     var isTimerStarted = false
-    var time = 2
+    var time = 0
     var delegate: TransferTimeProtocol?
     
-    
-    //MARK: View Did Load
+    // MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         cancelButton.isEnabled = false
+        cancelButton.alpha = 0.5
+        startButton.setTitle("Start", for: .normal)
+        startButton.setTitleColor(.systemGreen, for: .normal)
     }
+    
+    // MARK: View Will Appear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAllTimes()
-        timer.invalidate()
-        isTimerStarted = false
+        cancelButton.isEnabled = false
+        cancelButton.alpha = 0.5
+        startButton.isEnabled = true
         startButton.setTitle("Start", for: .normal)
         startButton.setTitleColor(.systemGreen, for: .normal)
-        cancelButton.alpha = 0.5
+    }
+    
+    // MARK: View Will Dissappear
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
+        isTimerStarted = false
     }
     
     // MARK: All Times Func.
@@ -99,18 +110,15 @@ class FocusVC: UIViewController {
             time = 1440
         }
         if timeLabel.text == "25:00"{
-            time = 2
+            time = 1500
         }
     }
     
-    //MARK: Segue
+    // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toChangeTime" {
             let vc =  segue.destination as! TimeSliderVC
             vc.delegate = self
-            timer.invalidate()
-            
-            
         }
     }
     
@@ -144,7 +152,7 @@ class FocusVC: UIViewController {
         }
     }
     
-    //MARK: Start Timer Func.
+    // MARK: Start Timer Func.
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
@@ -158,20 +166,18 @@ class FocusVC: UIViewController {
         }else{
             time -= 1
             timeLabel.text = formatTime()
-            
         }
     }
     
-    //MARK: Format Time Func.
+    // MARK: Format Time Func.
     func formatTime() -> String {
-        let minutes = Int(time) / 60 & 60
+        let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
         return String(format: "%02i:%02i", minutes, seconds)
     }
-    
-    
-}
+}// MARK: END OF VİEW CONTROLLER
 
+// ∫MARK: Extension For Protocol
 extension FocusVC: TransferTimeProtocol {
     func transferTime(chooseTime: String) {
         timeLabel.text = "\(chooseTime):00"

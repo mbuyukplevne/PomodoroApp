@@ -17,7 +17,7 @@ class TimeSliderVC: UIViewController {
     // MARK: Variables
     var delegate: TransferTimeProtocol?
     
-    //MARK: Outlets
+    // MARK: Outlets
     @IBOutlet weak var changeTimeLabel: UILabel!
     @IBOutlet weak var sliderLabel: UISlider!
     
@@ -37,6 +37,4 @@ class TimeSliderVC: UIViewController {
         delegate?.transferTime(chooseTime: changeTimeLabel.text!)
         changeTimeLabel.text = String(Int(round(sliderLabel.value)))
     }
-    
-
 }
