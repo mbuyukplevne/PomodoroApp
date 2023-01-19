@@ -16,13 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intelligence" translatesAutoresizingMaskIntoConstraints="NO" id="cBr-HF-ehT">
-                                <rect key="frame" x="157" y="399" width="101" height="98"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="101" id="1ge-n2-PsK"/>
-                                    <constraint firstAttribute="height" constant="98" id="vUT-dc-Egu"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaX-Nc-4y8">
                                 <rect key="frame" x="50" y="185" width="314" height="107.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="90"/>
@@ -60,18 +53,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1KI-4C-fzb" firstAttribute="top" secondItem="cBr-HF-ehT" secondAttribute="bottom" constant="95" id="8rh-sR-3NU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cBr-HF-ehT" secondAttribute="trailing" constant="156" id="Bdw-w8-VrY"/>
-                            <constraint firstItem="cBr-HF-ehT" firstAttribute="top" secondItem="VaX-Nc-4y8" secondAttribute="bottom" constant="106.5" id="Gzu-ln-Kvh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VaX-Nc-4y8" secondAttribute="trailing" constant="50" id="Lae-iX-JWY"/>
                             <constraint firstItem="0fp-PK-orO" firstAttribute="top" secondItem="VaX-Nc-4y8" secondAttribute="bottom" constant="300.5" id="OXq-2r-Jmk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0fp-PK-orO" secondAttribute="bottom" constant="227" id="Sd2-eo-qpb"/>
                             <constraint firstItem="0fp-PK-orO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="UFv-i6-r2S"/>
-                            <constraint firstItem="cBr-HF-ehT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="WzJ-L1-jp8"/>
                             <constraint firstItem="VaX-Nc-4y8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="YgP-z6-eTE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1KI-4C-fzb" secondAttribute="trailing" constant="20" id="gdf-VB-3p4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1KI-4C-fzb" secondAttribute="bottom" constant="228" id="gvR-Tp-Ud3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cBr-HF-ehT" secondAttribute="bottom" constant="365" id="mo0-kX-SjY"/>
                             <constraint firstItem="VaX-Nc-4y8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="93" id="oAj-Rl-6jg"/>
                             <constraint firstItem="1KI-4C-fzb" firstAttribute="leading" secondItem="0fp-PK-orO" secondAttribute="trailing" constant="74.5" id="x9h-y3-nbm"/>
                         </constraints>
@@ -120,7 +108,7 @@
                                     <constraint firstAttribute="height" constant="35.5" id="xYM-cS-rTu"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Odaklan">
+                                <buttonConfiguration key="configuration" style="filled" title="Odaklan">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -181,7 +169,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="intelligence" width="512" height="512"/>
         <image name="stop.fill" catalog="system" width="128" height="113"/>
         <image name="timer" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
